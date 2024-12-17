@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "324697010498",
+    "project_id": "roseo-study",
+    "storage_bucket": "roseo-study.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324697010498:android:b7851ba90f05cbf7a398db",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCicXk-TRs_9ZO7mIQOTaY_C1juV59j4Uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324697010498:android:4d29f569f0987325a398db",
+        "android_client_info": {
+          "package_name": "com.roseo.roseo_study"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCicXk-TRs_9ZO7mIQOTaY_C1juV59j4Uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324697010498:android:ea0dcd053ef5b1e2a398db",
+        "android_client_info": {
+          "package_name": "com.roseo.study.calendarapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCicXk-TRs_9ZO7mIQOTaY_C1juV59j4Uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

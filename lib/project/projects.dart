@@ -17,6 +17,42 @@ class _ProjectsPageState extends State<ProjectsPage> {
     final TextEditingController clientController = TextEditingController();
     final TextEditingController costController = TextEditingController();
 
+    void _addProject() {
+      if (titleController.text.isEmpty ||
+          dateController.text.isEmpty ||
+          descriptionController.text.isEmpty ||
+          clientController.text.isEmpty ||
+          costController.text.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('모든 필드를 입력해주세요')),
+        );
+        return;
+      }
+
+      try {
+        DateTime.parse(dateController.text); // 날짜 검증
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('날짜 형식이 잘못되었습니다 (YYYY-MM-DD)')),
+        );
+        return;
+      }
+
+      firebaseService.addProject({
+        'title': titleController.text,
+        'date': Timestamp.fromDate(DateTime.parse(dateController.text)),
+        'description': descriptionController.text,
+        'client': clientController.text,
+        'cost': int.tryParse(costController.text) ?? 0,
+      }).then((_) {
+        Navigator.pop(context);
+      }).catchError((error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('프로젝트 추가 중 오류가 발생했습니다')),
+        );
+      });
+    }
+
     showDialog(
       context: context,
       builder: (context) {
@@ -44,6 +80,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                 TextField(
                   controller: costController,
                   decoration: InputDecoration(labelText: '외주비'),
+                  keyboardType: TextInputType.number,
                 ),
               ],
             ),
@@ -54,16 +91,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
               child: Text('취소'),
             ),
             ElevatedButton(
-              onPressed: () {
-                firebaseService.addProject({
-                  'title': titleController.text,
-                  'date': dateController.text,
-                  'description': descriptionController.text,
-                  'client': clientController.text,
-                  'cost': costController.text,
-                });
-                Navigator.pop(context);
-              },
+              onPressed: _addProject,
               child: Text('저장'),
             ),
           ],
@@ -89,7 +117,9 @@ class _ProjectsPageState extends State<ProjectsPage> {
               final project = projects[index].data() as Map<String, dynamic>;
               return ListTile(
                 title: Text(project['title']),
-                subtitle: Text(project['date']),
+                subtitle: Text(project['date'] is Timestamp
+                    ? (project['date'] as Timestamp).toDate().toString()
+                    : project['date'].toString()),
               );
             },
           );

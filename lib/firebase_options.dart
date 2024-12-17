@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCicXk-TRs_9ZO7mIQOTaY_C1juV59j4Uc',
-    appId: '1:324697010498:android:b7851ba90f05cbf7a398db',
+    appId: '1:324697010498:android:ea0dcd053ef5b1e2a398db',
     messagingSenderId: '324697010498',
     projectId: 'roseo-study',
     storageBucket: 'roseo-study.firebasestorage.app',
@@ -60,20 +60,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBV_XD-dOX6ksO7hGklDXJIMB0vCCIi3D0',
-    appId: '1:324697010498:ios:a36e2dc6c8e1aaf8a398db',
+    appId: '1:324697010498:ios:7113d5cfd70dfc22a398db',
     messagingSenderId: '324697010498',
     projectId: 'roseo-study',
     storageBucket: 'roseo-study.firebasestorage.app',
-    iosBundleId: 'com.example.roseoStudy',
+    iosBundleId: 'com.example.roseoStudyFirebase',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBV_XD-dOX6ksO7hGklDXJIMB0vCCIi3D0',
-    appId: '1:324697010498:ios:a36e2dc6c8e1aaf8a398db',
+    appId: '1:324697010498:ios:7113d5cfd70dfc22a398db',
     messagingSenderId: '324697010498',
     projectId: 'roseo-study',
     storageBucket: 'roseo-study.firebasestorage.app',
-    iosBundleId: 'com.example.roseoStudy',
+    iosBundleId: 'com.example.roseoStudyFirebase',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'roseo-study.firebasestorage.app',
     measurementId: 'G-8BWSMR2KSR',
   );
+
 }

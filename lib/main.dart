@@ -6,6 +6,7 @@ import 'schedule/schedule_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'project/projects.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 //일자 표시용 밸류
 int getStartWeekday(int year, int month) {
@@ -18,16 +19,19 @@ int getTotalDays(int year, int month) {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(ProviderScope(child: MyApp()));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: CalendarPage(),
+      title: 'Firebase Integration',
+      home: CalendarPage()
     );
   }
 }
