@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:roseo_study/schedule/add_schedule.dart';
+import 'schedule/add_schedule.dart';
 import 'schedule/schedule_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:roseo_study/project/projects.dart';
+import 'project/projects.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 //일자 표시용 밸류
